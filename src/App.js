@@ -2,7 +2,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { decrement, increment } from './Redux/counter';
 
 function App() {
-  const {counterState} = useSelector((state)=>state.counter);
+  const count = useSelector((state)=>state.counter.value);
   const dispatch = useDispatch();
   return (
     <>
@@ -22,7 +22,7 @@ function App() {
           </div>
           <div className="col-sm-4 mt-5">
           <button className="p-2 m-2" onClick={()=>dispatch(increment())}>+</button>
-            <span className="p-2 m-2">{counterState}</span>
+            <span className="p-2 m-2">{count}</span>
             <button className="p-2 m-2" onClick={()=>dispatch(decrement())}>-</button>
           </div>
           <div className="col-sm-4">
